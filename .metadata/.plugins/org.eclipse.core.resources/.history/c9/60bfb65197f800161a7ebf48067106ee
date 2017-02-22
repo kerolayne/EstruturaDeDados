@@ -1,0 +1,12 @@
+package estd;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class CalculadoraTest {
+	@Test 
+	public void somarTest(){
+		Calculadora calculadora = new Calculadora();
+		int resultado = calculadora.somar(5, 3);
+		Assert.assertEquals(8, resultado);
+}
