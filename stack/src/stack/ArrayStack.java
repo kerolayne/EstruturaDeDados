@@ -6,6 +6,9 @@ public class ArrayStack<E> implements Stack<E> {
 	private int position = 0;
 
 	public ArrayStack(int size) {
+		if (size <= 0) {
+			throw new IllegalArgumentException();
+		}
 		array = (E[]) new Object[size];
 	}
 
@@ -15,6 +18,11 @@ public class ArrayStack<E> implements Stack<E> {
 
 	@Override
 	public void push(E e) {
+		if (position == array.length) {
+			E[] temp = (E[]) new Object[array.length * 2];
+			System.arraycopy(array, 0, temp, 0, array.length);
+			array = temp;
+		}
 		array[position] = e;
 		position++;
 	}

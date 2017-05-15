@@ -64,4 +64,13 @@ public class ArrayStackTest {
 		Assert.assertNull(stack.top());
 		
 	}
+	
+	@Test 
+	public void inverterStringTest(){
+		Q1 q1 = new Q1();
+		
+		String invert = "a, b, c"; 
+		Assert.assertEquals("c ,b ,a", q1.inverter(invert));
+		
+	}
 }
